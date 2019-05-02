@@ -10,7 +10,7 @@ public class MainMenuController : MonoBehaviour {
     public InputField playerIDText;
 	public InputField groupIDText;
     public InputField[] optionalVariables;
-    public GameObject panel;
+    public GameObject[] panels; //objects that appear when a player tries to continue without entering IDs
 
     void Awake() {
         if (_instance == null) {
@@ -31,7 +31,9 @@ public class MainMenuController : MonoBehaviour {
 
     public void LoadTutorial() {
         if (IsIDsEmpty()) {
-            panel.SetActive(true);
+            foreach(GameObject panel in panels) {
+                panel.SetActive(true);
+            } 
         } else {
             SetInputs();
             SceneManager.LoadScene ("TutorialInstructions");
@@ -44,7 +46,9 @@ public class MainMenuController : MonoBehaviour {
 
 	public void LoadCarSelect() {
         if (IsIDsEmpty()) {
-            panel.SetActive(true);
+            foreach (GameObject panel in panels) {
+                panel.SetActive(true);
+            }
         } else {
             SetInputs();
             SceneManager.LoadScene("CarSelect");
@@ -53,7 +57,9 @@ public class MainMenuController : MonoBehaviour {
 
 	public void LoadPartsSelect() {
         if (IsIDsEmpty()) {
-            panel.SetActive(true);
+            foreach (GameObject panel in panels) {
+                panel.SetActive(true);
+            }
         } else {
             SetInputs();
             SceneManager.LoadScene ("PartsSelect");
