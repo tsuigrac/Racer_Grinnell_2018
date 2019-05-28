@@ -1428,7 +1428,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ff803ab9dc00403da37acb83f5f543b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  curTrack: 0
+  curTrack: 5
   trackInfos:
   - trackLevelName: StraightTrack
     image: {fileID: 1010290788}
